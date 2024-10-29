@@ -1,0 +1,68 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "Default_user_name",
+      "value": "imai"
+    },
+    {
+      "name": "Default_user_desc",
+      "value": "welcome to imai's home"
+    },
+    {
+      "name": "Default_cate_name",
+      "value": "default_category"
+    },
+    {
+      "name": "Default_article_name_1",
+      "value": "default_article_1"
+    },
+    {
+      "name": "Default_article_page_1",
+      "value": "DefaultArticle1"
+    },
+    {
+      "name": "Default_article_name_2",
+      "value": "default_article_2"
+    },
+    {
+      "name": "Default_article_page_2",
+      "value": "DefaultArticle2"
+    },
+    {
+      "name": "Category_OS",
+      "value": "操作系统"
+    },
+    {
+      "name": "Article_OS_VFS_name",
+      "value": "虚拟文件系统"
+    },
+    {
+      "name": "Article_OS_VFS_page",
+      "value": "ArticleVFS"
+    },
+    {
+      "name": "Article_OS_sem_name",
+      "value": "信号量"
+    },
+    {
+      "name": "Article_OS_sem_page",
+      "value": "ArticleSem"
+    },
+    {
+      "name": "apply_for_network",
+      "value": "Allow the app to access the network"
+    }
+  ]
+}
