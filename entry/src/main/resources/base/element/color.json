@@ -3,6 +3,22 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "text",
+      "value": "#2c2c2c"
+    },
+    {
+      "name": "text_gray",
+      "value": "#FF7C7C7C"
+    },
+    {
+      "name": "background",
+      "value": "#FFECECEC"
+    },
+    {
+      "name": "background_card",
+      "value": "#FFFFFFFF"
     }
   ]
 }

@@ -32,12 +32,7 @@ export struct Categories {
       .setDivider()
     }
     .navDestination(this.CategoriesRouter)
-    .backgroundColor(Color.Black)
-  }
-
-  @Builder
-  PagesMap(name: string) {
-
+    .backgroundColor($r('app.color.background'))
   }
 
 }
@@ -45,9 +40,9 @@ export struct Categories {
 @Extend(List)
 function setDivider() {
   .divider({
-    startMargin: 10,
-    endMargin: 10,
-    strokeWidth: 2,
-    color: Color.Gray
+    startMargin: 16,
+    endMargin: 16,
+    strokeWidth: 1,
+    color: $r('app.color.background')
   })
 }
