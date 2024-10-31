@@ -4,7 +4,14 @@ enum AppFontSize {
   MIDDLE = 20,
   LARGE = 24,
   XLARGE = 28,
-  XXLARGE = 32
+  XXLARGE = 32,
 }
 
 export {AppFontSize};
+
+enum ColorMode {
+  LIGHT,
+  DARK,
+}
+
+export {ColorMode}

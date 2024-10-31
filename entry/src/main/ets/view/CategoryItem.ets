@@ -1,12 +1,13 @@
 import { ArticleData } from '../viewModel/ArticleData'
 import { CategoryData } from '../viewModel/CategoryData'
-import { resource2Str } from '../utils/utils'
-import { AppFontSize } from '../common/constants/ThemeConstants'
+import { resource2Str } from '../util/TransferUtils'
+import { AppFontSize, ColorMode } from '../common/constant/ThemeConstants'
 
 @Component
 export struct CategoryItem {
   @Prop categoryData: CategoryData = new CategoryData()
   @Consume('articlePathStack') articlePS: NavPathStack
+  @Consume('colorMode') colorMode: ColorMode;
 
   build() {
     Column({ space: 16 }) {
@@ -14,12 +15,16 @@ export struct CategoryItem {
         Text() {
           SymbolSpan($r('sys.symbol.folder_fill'))
         }
-        .fontColor($r('app.color.text_gray'))
+        .fontColor(this.colorMode === ColorMode.LIGHT
+          ? $r('app.color.text_shallow')
+          : $r('app.color.text_shallow_dark'))
         .fontWeight(FontWeight.Bold)
         .fontSize(AppFontSize.LARGE)
 
         Text(this.categoryData.categoryName)
-          .fontColor($r('app.color.text_gray'))
+          .fontColor(this.colorMode === ColorMode.LIGHT
+            ? $r('app.color.text_shallow')
+            : $r('app.color.text_shallow_dark'))
           .fontWeight(FontWeight.Bold)
           .fontSize(AppFontSize.LARGE)
       }
@@ -31,7 +36,9 @@ export struct CategoryItem {
     .width('100%')
     .padding(16)
     .alignItems(HorizontalAlign.Start)
-    .backgroundColor($r('app.color.background_card'))
+    .backgroundColor(this.colorMode === ColorMode.LIGHT
+      ? $r('app.color.background_card')
+      : $r('app.color.background_card_dark'))
   }
 
   @Builder
@@ -40,12 +47,16 @@ export struct CategoryItem {
       Text() {
         SymbolSpan($r('sys.symbol.doc_plaintext'))
       }
-      .fontColor($r('app.color.text'))
+      .fontColor(this.colorMode === ColorMode.LIGHT
+        ? $r('app.color.text')
+        : $r('app.color.text_dark'))
       .padding({ left: 16 })
       .fontSize(AppFontSize.MIDDLE)
 
       Text(articleData.articleName)
-        .fontColor($r('app.color.text'))
+        .fontColor(this.colorMode === ColorMode.LIGHT
+          ? $r('app.color.text')
+          : $r('app.color.text_dark'))
         .fontSize(AppFontSize.MIDDLE)
     }
     .onClick(() => {

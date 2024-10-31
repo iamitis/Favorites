@@ -1,3 +1,4 @@
+import { ColorMode } from '../common/constant/ThemeConstants'
 import { CategoryItem } from '../view/CategoryItem'
 import { ArticleData } from '../viewModel/ArticleData'
 import { CategoryData } from '../viewModel/CategoryData'
@@ -10,6 +11,7 @@ let categoryModel = new CategoryModel()
 export struct Categories {
   @Provide('articlePathStack') articlePS: NavPathStack = new NavPathStack()
   @State categoriesList: CategoryData[] = []
+  @Consume('colorMode') colorMode: ColorMode;
 
   aboutToAppear(): void {
     this.categoriesList = categoryModel.loadCategories()
@@ -29,20 +31,24 @@ export struct Categories {
           CategoryItem({ categoryData: item })
         }, (item: CategoryData) => JSON.stringify(item.categoryName))
       }
-      .setDivider()
+      .setDivider(this.colorMode)
     }
     .navDestination(this.CategoriesRouter)
-    .backgroundColor($r('app.color.background'))
+    .backgroundColor(this.colorMode === ColorMode.LIGHT
+      ? $r('app.color.background')
+      : $r('app.color.background_dark'))
   }
 
 }
 
 @Extend(List)
-function setDivider() {
+function setDivider(colorMode: ColorMode) {
   .divider({
     startMargin: 16,
     endMargin: 16,
     strokeWidth: 1,
-    color: $r('app.color.background')
+    color: colorMode === ColorMode.LIGHT
+      ? $r('app.color.background')
+      : $r('app.color.background_dark')
   })
 }

@@ -9,16 +9,32 @@
       "value": "#2c2c2c"
     },
     {
-      "name": "text_gray",
+      "name": "text_dark",
+      "value": "#FFEEEEEE"
+    },
+    {
+      "name": "text_shallow",
       "value": "#FF7C7C7C"
+    },
+    {
+      "name": "text_shallow_dark",
+      "value": "#FFD6D6D6"
     },
     {
       "name": "background",
       "value": "#FFECECEC"
     },
     {
+      "name": "background_dark",
+      "value": "#FF1D1D1D"
+    },
+    {
       "name": "background_card",
       "value": "#FFFFFFFF"
+    },
+    {
+      "name": "background_card_dark",
+      "value": "#FF000000"
     }
   ]
 }

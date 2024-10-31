@@ -1,6 +1,6 @@
 import { ArticleData } from '../viewModel/ArticleData'
 import { webview } from '@kit.ArkWeb'
-import { resource2Str } from '../utils/utils';
+import { resource2Str } from '../util/TransferUtils';
 
 @Component
 export struct ArticleDetail {
