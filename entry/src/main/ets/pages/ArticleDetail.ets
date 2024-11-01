@@ -20,9 +20,6 @@ export struct ArticleDetail {
     }
   }
 
-  rsrc2Str(resource: Resource): string {
-    return resource2Str(getContext(this), resource)
-  }
 }
 
 @Component

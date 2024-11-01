@@ -1,7 +1,8 @@
+import CategoryModel from '../model/CategoryModel'
 import DataModel from '../model/DataModel'
 import { ArticleData } from './ArticleData'
 
 export class CategoryData {
-  categoryName: Resource = $r('app.string.Default_cate_name')
+  categoryName: string = "文档"
   articles: ArticleData[] = []
 }

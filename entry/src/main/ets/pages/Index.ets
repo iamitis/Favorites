@@ -1,0 +1,93 @@
+import { AppFontSize, ColorMode } from '../common/constant/ThemeConstants';
+import PreferenceModel from '../model/PreferenceModel';
+import { Blogs } from './Blogs'
+import { Categories } from './Categories'
+import { Profile } from './Profile'
+
+@Entry
+@Component
+struct Index {
+  @State currentIndex: number = 0;
+  @Provide('colorMode') colorMode: ColorMode = ColorMode.LIGHT;
+  @State colorIcon: Resource = $r('sys.symbol.sun_min');
+
+  async aboutToAppear() {
+    await PreferenceModel.getPreferencesModelFromStorage();
+
+    PreferenceModel.getColorMode().then((res) => {
+      if (res) {
+        this.colorMode = res;
+        this.colorIcon = this.colorMode === ColorMode.DARK
+          ? $r('sys.symbol.moon')
+          : $r('sys.symbol.sun')
+      }
+    })
+  }
+
+  build() {
+    Stack() {
+      Tabs() {
+        // TabContent() {
+        //   Profile()
+        // }.tabBar('Profile')
+
+        TabContent() {
+          Categories()
+        }
+        .tabBar(this.tabBuilder('分类', 0))
+
+        TabContent() {
+          Blogs()
+        }
+        .tabBar(this.tabBuilder('搜索', 1))
+      }
+      .barBackgroundColor(this.colorMode === ColorMode.LIGHT
+        ? $r('app.color.background_card')
+        : $r('app.color.background_card_dark'))
+      .onChange((index: number) => {
+        this.currentIndex = index;
+      })
+
+      Button({ type: ButtonType.Circle }) {
+        Text() {
+          SymbolSpan(this.colorIcon)
+        }
+        .fontSize(AppFontSize.XLARGE)
+        .fontColor(this.colorMode === ColorMode.LIGHT
+          ? $r('app.color.text')
+          : $r('app.color.text_dark'))
+      }
+      .position({ bottom: 24, right: 20 })
+      .backgroundColor(Color.Transparent)
+      .onClick(() => {
+        if (this.colorMode === ColorMode.LIGHT) {
+          PreferenceModel.changeColorMode(ColorMode.DARK);
+          this.colorMode = ColorMode.DARK;
+          this.colorIcon = $r('sys.symbol.moon');
+        } else {
+          PreferenceModel.changeColorMode(ColorMode.LIGHT);
+          this.colorMode = ColorMode.LIGHT;
+          this.colorIcon = $r('sys.symbol.sun');
+        }
+      })
+    }
+  }
+
+  @Builder
+  tabBuilder(title: string, targetIndex: number) {
+    Column() {
+      Text(title)
+        .fontColor(this.currentIndex === targetIndex
+          ? this.colorMode === ColorMode.LIGHT
+            ? $r('app.color.text')
+            : $r('app.color.text_dark')
+          : this.colorMode === ColorMode.LIGHT
+            ? $r('app.color.text_shallow')
+            : $r('app.color.text_shallow_dark'))
+        .fontSize(AppFontSize.XLARGE)
+        .fontWeight(FontWeight.Bold)
+    }
+    .width('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}

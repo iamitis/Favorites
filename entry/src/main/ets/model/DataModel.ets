@@ -1,6 +1,6 @@
 import { ArticleData } from '../viewModel/ArticleData'
 import { CategoryData } from '../viewModel/CategoryData'
-import { UserInfo } from '../viewModel/ProfileModel'
+import { UserInfo } from './ProfileModel'
 
 export default class DataModel {
   public static readonly USER_INFO: UserInfo[] = [
@@ -11,42 +11,44 @@ export default class DataModel {
     }
   ]
 
-  public static readonly DEFAULT_ARTICLE_1: ArticleData = {
-    articleName: $r('app.string.Default_article_name_1'),
-    articlePage: $r('app.string.Default_article_page_1'),
-    webUrl: 'https://iamitis.github.io/my-pages/'
+  public static readonly DOCS_ARTICLE_1: ArticleData = {
+    articleName: "HarmonyOS开发文档",
+    webUrl: "https://developer.huawei.com/consumer/cn/doc/"
   }
 
-  public static readonly DEFAULT_ARTICLE_2: ArticleData = {
-    articleName: $r('app.string.Default_article_name_2'),
-    articlePage: $r('app.string.Default_article_page_2'),
-    webUrl: 'https://iamitis.github.io/my-pages/'
+  public static readonly DOCS_ARTICLE_2: ArticleData = {
+    articleName: "Git官方文档",
+    webUrl: "https://git-scm.com/book/zh/v2"
   }
 
-  public static readonly DEFAULT_ARTICLES: ArticleData[] = [
-    this.DEFAULT_ARTICLE_1,
-    this.DEFAULT_ARTICLE_2
+  public static readonly DOCS_ARTICLES: ArticleData[] = [
+    this.DOCS_ARTICLE_1,
+    this.DOCS_ARTICLE_2
   ]
 
-  public static readonly DEFAULT_CATEGORY: CategoryData[] = [
+  public static readonly TOOLS_ARTICLE_1: ArticleData = {
+    articleName: "github",
+    webUrl: "https://github.com/iamitis"
+  }
+
+  public static readonly TOOLS_ARTICLE_2: ArticleData = {
+    articleName: "飞书",
+    webUrl: "https://www.feishu.cn/"
+  }
+
+  public static readonly TOOLS_ARTICLES: ArticleData[] = [
+    this.TOOLS_ARTICLE_1,
+    this.TOOLS_ARTICLE_2
+  ]
+
+  public static readonly DEFAULT_CATEGORIES: CategoryData[] = [
     {
-      categoryName: $r('app.string.Default_cate_name'),
-      articles: this.DEFAULT_ARTICLES
+      categoryName: "文档",
+      articles: this.DOCS_ARTICLES
     },
     {
-      categoryName: $r('app.string.Category_OS'),
-      articles: [
-        {
-          articleName: $r('app.string.Article_OS_VFS_name'),
-          articlePage: $r('app.string.Article_OS_VFS_page'),
-          webUrl: 'https://iamitis.github.io/my-pages/'
-        },
-        {
-          articleName: $r('app.string.Article_OS_sem_name'),
-          articlePage: $r('app.string.Article_OS_sem_page'),
-          webUrl: 'https://iamitis.github.io/my-pages/'
-        }
-      ]
+      categoryName: "实用工具",
+      articles: this.TOOLS_ARTICLES
     }
   ]
 }

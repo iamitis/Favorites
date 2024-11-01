@@ -2,7 +2,7 @@ import { ColorMode } from '../common/constant/ThemeConstants'
 import { CategoryItem } from '../view/CategoryItem'
 import { ArticleData } from '../viewModel/ArticleData'
 import { CategoryData } from '../viewModel/CategoryData'
-import CategoryModel from '../viewModel/CategoryModel'
+import CategoryModel from '../model/CategoryModel'
 import { ArticleDetail } from './ArticleDetail'
 
 let categoryModel = new CategoryModel()

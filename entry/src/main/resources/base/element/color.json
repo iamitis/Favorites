@@ -10,7 +10,7 @@
     },
     {
       "name": "text_dark",
-      "value": "#FFEEEEEE"
+      "value": "#FFFFFFFF"
     },
     {
       "name": "text_shallow",
@@ -18,7 +18,7 @@
     },
     {
       "name": "text_shallow_dark",
-      "value": "#FFD6D6D6"
+      "value": "#FFCDCDCD"
     },
     {
       "name": "background",
@@ -34,7 +34,7 @@
     },
     {
       "name": "background_card_dark",
-      "value": "#FF000000"
+      "value": "#FF161616"
     }
   ]
 }

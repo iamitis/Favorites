@@ -1,5 +1,4 @@
 export class ArticleData {
-  articleName: Resource = $r('app.string.Default_article_name_1');
-  articlePage: Resource = $r('app.string.Default_article_page_1');
-  webUrl: string = 'https://iamitis.github.io/my-pages/';
+  articleName: string = "HarmonyOs开发文档";
+  webUrl: string = "https://developer.huawei.com/consumer/cn/doc/";
 }

@@ -21,44 +21,44 @@
       "value": "welcome to imai's home"
     },
     {
-      "name": "Default_cate_name",
-      "value": "default_category"
+      "name": "Category_docs",
+      "value": "文档"
     },
     {
-      "name": "Default_article_name_1",
-      "value": "default_article_1"
+      "name": "Article_docs_ohos_name",
+      "value": "HarmonyOs开发文档"
     },
     {
-      "name": "Default_article_page_1",
-      "value": "DefaultArticle1"
+      "name": "Article_docs_ohos_url",
+      "value": "https://developer.huawei.com/consumer/cn/doc/"
     },
     {
-      "name": "Default_article_name_2",
-      "value": "default_article_2"
+      "name": "Article_docs_git_name",
+      "value": "Git官方文档"
     },
     {
-      "name": "Default_article_page_2",
-      "value": "DefaultArticle2"
+      "name": "Article_docs_git_url",
+      "value": "https://git-scm.com/book/zh/v2"
     },
     {
-      "name": "Category_OS",
-      "value": "操作系统"
+      "name": "Category_tools",
+      "value": "实用工具"
     },
     {
-      "name": "Article_OS_VFS_name",
-      "value": "虚拟文件系统"
+      "name": "Article_tools_github_name",
+      "value": "github"
     },
     {
-      "name": "Article_OS_VFS_page",
-      "value": "ArticleVFS"
+      "name": "Article_tools_github_url",
+      "value": "https://github.com/iamitis"
     },
     {
-      "name": "Article_OS_sem_name",
-      "value": "信号量"
+      "name": "Article_tools_feishu_name",
+      "value": "飞书"
     },
     {
-      "name": "Article_OS_sem_page",
-      "value": "ArticleSem"
+      "name": "Article_tools_feishu_url",
+      "value": "https://www.feishu.cn/"
     },
     {
       "name": "apply_for_network",

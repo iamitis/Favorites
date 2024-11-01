@@ -1,4 +1,4 @@
-import { UserInfo } from '../viewModel/ProfileModel'
+import { UserInfo } from '../model/ProfileModel'
 
 @Component
 export struct Profile {

@@ -31,7 +31,7 @@ export struct CategoryItem {
 
       ForEach(this.categoryData.articles, (item: ArticleData) => {
         this.CategoryArticleItem(item)
-      }, (item: ArticleData) => this.rsrc2Str(item.articleName))
+      }, (item: ArticleData) => item.articleName)
     }
     .width('100%')
     .padding(16)
@@ -64,7 +64,4 @@ export struct CategoryItem {
     })
   }
 
-  rsrc2Str(resource: Resource): string {
-    return resource2Str(getContext(this), resource)
-  }
 }
