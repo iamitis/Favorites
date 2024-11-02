@@ -5,6 +5,7 @@ enum AppFontSize {
   LARGE = 24,
   XLARGE = 28,
   XXLARGE = 32,
+  XXXLARGE = 36,
 }
 
 export {AppFontSize};

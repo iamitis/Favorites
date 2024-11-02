@@ -26,29 +26,23 @@ export default class DataModel {
     this.DOCS_ARTICLE_2
   ]
 
-  public static readonly TOOLS_ARTICLE_1: ArticleData = {
-    articleName: "github",
-    webUrl: "https://github.com/iamitis"
+  public static readonly BOOKS_ARTICLE_1: ArticleData = {
+    articleName: "Operating Systems: Three Easy Pieces",
+    webUrl: "https://pages.cs.wisc.edu/~remzi/OSTEP/#book-chapters"
   }
 
-  public static readonly TOOLS_ARTICLE_2: ArticleData = {
-    articleName: "飞书",
-    webUrl: "https://www.feishu.cn/"
+  public static readonly BOOKS_ARTICLE_2: ArticleData = {
+    articleName: "Flutter实战",
+    webUrl: "https://book.flutterchina.club/"
   }
 
-  public static readonly TOOLS_ARTICLES: ArticleData[] = [
-    this.TOOLS_ARTICLE_1,
-    this.TOOLS_ARTICLE_2
+  public static readonly BOOKS_ARTICLES: ArticleData[] = [
+    this.BOOKS_ARTICLE_1,
+    this.BOOKS_ARTICLE_2
   ]
 
   public static readonly DEFAULT_CATEGORIES: CategoryData[] = [
-    {
-      categoryName: "文档",
-      articles: this.DOCS_ARTICLES
-    },
-    {
-      categoryName: "实用工具",
-      articles: this.TOOLS_ARTICLES
-    }
+    new CategoryData("文档", this.DOCS_ARTICLES),
+    new CategoryData("电子书", this.BOOKS_ARTICLES),
   ]
 }

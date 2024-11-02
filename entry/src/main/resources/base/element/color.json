@@ -35,6 +35,10 @@
     {
       "name": "background_card_dark",
       "value": "#FF161616"
+    },
+    {
+      "name": "blue",
+      "value": "#FF068FF5"
     }
   ]
 }

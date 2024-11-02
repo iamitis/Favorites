@@ -1,6 +1,7 @@
 import { ArticleData } from '../viewModel/ArticleData'
 import { webview } from '@kit.ArkWeb'
 import { resource2Str } from '../util/TransferUtils';
+import { ColorMode } from '../common/constant/ThemeConstants';
 
 @Component
 export struct ArticleDetail {
@@ -15,21 +16,25 @@ export struct ArticleDetail {
   build() {
     NavDestination() {
       Column() {
-        WebComponent({webUrl: this.articleData?.webUrl, webController: this.webController})
+        WebComponent({ webUrl: this.articleData?.webUrl, webController: this.webController })
       }
     }
   }
-
 }
 
 @Component
 struct WebComponent {
   @Prop webUrl: string | null;
   @Prop webController: WebviewController;
+  @Consume('colorMode') colorMode: ColorMode;
 
   build() {
     Column() {
       Web({ src: this.webUrl, controller: this.webController })
+        .darkMode(this.colorMode === ColorMode.LIGHT
+          ? WebDarkMode.Off
+          : WebDarkMode.On)
+        .forceDarkAccess(true)
     }
   }
 }

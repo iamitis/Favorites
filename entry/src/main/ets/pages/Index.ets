@@ -11,17 +11,13 @@ struct Index {
   @Provide('colorMode') colorMode: ColorMode = ColorMode.LIGHT;
   @State colorIcon: Resource = $r('sys.symbol.sun_min');
 
-  async aboutToAppear() {
-    await PreferenceModel.getPreferencesModelFromStorage();
+  aboutToAppear() {
+    PreferenceModel.getPreferencesModelFromStorage();
 
-    PreferenceModel.getColorMode().then((res) => {
-      if (res) {
-        this.colorMode = res;
-        this.colorIcon = this.colorMode === ColorMode.DARK
-          ? $r('sys.symbol.moon')
-          : $r('sys.symbol.sun')
-      }
-    })
+    this.colorMode = PreferenceModel.getColorMode();
+    this.colorIcon = this.colorMode === ColorMode.DARK
+      ? $r('sys.symbol.moon')
+      : $r('sys.symbol.sun')
   }
 
   build() {
@@ -34,13 +30,14 @@ struct Index {
         TabContent() {
           Categories()
         }
-        .tabBar(this.tabBuilder('分类', 0))
+        .tabBar(this.tabBuilder('分类', 0, $r('sys.symbol.list_bullet')))
 
         TabContent() {
           Blogs()
         }
-        .tabBar(this.tabBuilder('搜索', 1))
+        .tabBar(this.tabBuilder('搜索', 1, $r('sys.symbol.magnifyingglass')))
       }
+      .height('100%')
       .barBackgroundColor(this.colorMode === ColorMode.LIGHT
         ? $r('app.color.background_card')
         : $r('app.color.background_card_dark'))
@@ -71,12 +68,16 @@ struct Index {
         }
       })
     }
+    .height('100%')
   }
 
   @Builder
-  tabBuilder(title: string, targetIndex: number) {
+  tabBuilder(title: string, targetIndex: number, icon?: Resource) {
     Column() {
-      Text(title)
+      Row({space: 8}) {
+        Text() {
+          SymbolSpan(icon)
+        }
         .fontColor(this.currentIndex === targetIndex
           ? this.colorMode === ColorMode.LIGHT
             ? $r('app.color.text')
@@ -86,6 +87,18 @@ struct Index {
             : $r('app.color.text_shallow_dark'))
         .fontSize(AppFontSize.XLARGE)
         .fontWeight(FontWeight.Bold)
+
+        Text(title)
+          .fontColor(this.currentIndex === targetIndex
+            ? this.colorMode === ColorMode.LIGHT
+              ? $r('app.color.text')
+              : $r('app.color.text_dark')
+            : this.colorMode === ColorMode.LIGHT
+              ? $r('app.color.text_shallow')
+              : $r('app.color.text_shallow_dark'))
+          .fontSize(AppFontSize.XLARGE)
+          .fontWeight(FontWeight.Bold)
+      }
     }
     .width('100%')
     .alignItems(HorizontalAlign.Center)

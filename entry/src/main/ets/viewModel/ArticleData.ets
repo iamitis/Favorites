@@ -1,4 +1,4 @@
 export class ArticleData {
-  articleName: string = "HarmonyOs开发文档";
+  articleName: string = "新文档";
   webUrl: string = "https://developer.huawei.com/consumer/cn/doc/";
 }
