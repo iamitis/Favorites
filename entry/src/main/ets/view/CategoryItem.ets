@@ -1,6 +1,6 @@
 import { ArticleData } from '../viewModel/ArticleData'
 import { CategoryData } from '../viewModel/CategoryData'
-import { resource2Str } from '../util/TransferUtils'
+import { resource2Str } from '../util/TransferUtil'
 import { AppFontSize, ColorMode } from '../common/constant/ThemeConstants'
 import { ConfirmDialog } from '@kit.ArkUI'
 import PreferenceModel from '../model/PreferenceModel'

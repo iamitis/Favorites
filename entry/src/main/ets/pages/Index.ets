@@ -1,6 +1,6 @@
 import { AppFontSize, ColorMode } from '../common/constant/ThemeConstants';
 import PreferenceModel from '../model/PreferenceModel';
-import { Blogs } from './Blogs'
+import { SearchWeather } from './Search'
 import { Categories } from './Categories'
 import { Profile } from './Profile'
 
@@ -33,9 +33,9 @@ struct Index {
         .tabBar(this.tabBuilder('分类', 0, $r('sys.symbol.list_bullet')))
 
         TabContent() {
-          Blogs()
+          SearchWeather()
         }
-        .tabBar(this.tabBuilder('搜索', 1, $r('sys.symbol.magnifyingglass')))
+        .tabBar(this.tabBuilder('查询', 1, $r('sys.symbol.magnifyingglass')))
       }
       .height('100%')
       .barBackgroundColor(this.colorMode === ColorMode.LIGHT
@@ -99,6 +99,7 @@ struct Index {
           .fontSize(AppFontSize.XLARGE)
           .fontWeight(FontWeight.Bold)
       }
+      .justifyContent(FlexAlign.Center)
     }
     .width('100%')
     .alignItems(HorizontalAlign.Center)

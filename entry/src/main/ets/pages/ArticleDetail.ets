@@ -1,6 +1,6 @@
 import { ArticleData } from '../viewModel/ArticleData'
 import { webview } from '@kit.ArkWeb'
-import { resource2Str } from '../util/TransferUtils';
+import { resource2Str } from '../util/TransferUtil';
 import { ColorMode } from '../common/constant/ThemeConstants';
 
 @Component
