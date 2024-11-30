@@ -11,9 +11,9 @@ export struct WeatherItem {
       if (this.weatherData.weather !== '') {
         Text(this.weatherData.weather)
           .TextStyle(this.colorMode)
-        Text(this.weatherData.temperature + "℃")
+        Text("气温: " + this.weatherData.temperature + "℃")
           .TextStyle(this.colorMode)
-        Text(this.weatherData.humidity + "%")
+        Text("湿度: " + this.weatherData.humidity + "%")
           .TextStyle(this.colorMode)
       }
     }
